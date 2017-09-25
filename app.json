@@ -1,0 +1,34 @@
+{
+	"expo" : {
+		"name" : "Crypto-Coin-Miner",
+		"description" : "Find the most profitable crypto currency to mine.",
+		"slug" : "crypto-coin-miner",
+		"privacy" : "public",
+		"sdkVersion" : "20.0.0",
+		"version" : "1.0.0",
+		"orientation" : "portrait",
+		"primaryColor" : "#000",
+		"icon" : "./assets/icons/application.png",
+		"notification" : {
+			"icon" : "./assets/icons/notification-icon.png",
+			"color" : "#dcdcdc"
+		},
+		"loading" : {
+			"backgroundColor"  : "#333",
+			"backgroundImage"  : "",
+			"icon" : "./assets/icons/watermark.png",
+			"hideExponentText" : true
+		},
+		"packagerOpts" : {
+			"assetExts" : ["ttf"]
+		},
+		"android": {
+			"package": "com.webstew.bullet" ,
+			"versionCode": 1
+		} ,
+		"ios" : {
+			"bundleIdentifier": "com.webstew.bullet" ,
+			"supportsTablet" : true
+		}
+	}
+}
