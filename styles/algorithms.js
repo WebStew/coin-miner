@@ -22,13 +22,14 @@ export default ( theme ) => {
 
 		head 	: {
 			flex 			: 2 	,
-			flexDirection 	: 'row'
+			flexDirection 	: 'row' ,
+			alignItems 		: 'center'
 		} ,
 
 		icon 	: {
-			height 			: 16 	, 
-			marginRight 	: 5 	,
-			width 			: 16 
+			height 			: 24 	, 
+			marginRight 	: 10 	,
+			width 			: 24 
 		} ,
 
 		name 	: {

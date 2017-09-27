@@ -17,7 +17,7 @@ export default connect (
 	render () {
 
 		const 	language 	= this.props.language 	,
-				title 		= this.props.algorithms.loading ? language.actions.loading : language.screens.currencies.title.replace ( '{{length}}' , this.props.algorithms.items.length ) ,
+				title 		= this.props.algorithms.loading ? language.actions.loading : language.screens.algorithms.title.replace ( '{{length}}' , this.props.algorithms.items.length ) ,
 				theme 		= this.props.theme 		,
 				appearance 	= style ( theme ) 		;
 

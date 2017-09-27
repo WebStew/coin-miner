@@ -50,7 +50,7 @@ export default connect (
 					/>
 				);
 			} ,
-			title 		: language.screens.currencies.title
+			title 		: language.screens.algorithms.title
 		}
 	};
 
@@ -276,7 +276,7 @@ export default connect (
 					<SearchInput  	/>
 					<View 		style 	= { appearance [ '404' ].view 	}>
 						<Text 	style 	= { appearance [ '404' ].text 	}>
-							{ language.screens.currencies.none + ' "' 	}
+							{ language.screens.algorithms.none + ' "' 	}
 							<Text style = { appearance [ '404' ].term 	}>
 								{ this.props.search.value + '"' 		}
 							</Text>

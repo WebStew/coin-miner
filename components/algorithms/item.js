@@ -1,10 +1,10 @@
 
 import 		React 					from 'react';
-import { 	Image 				,
-			Text 				, 
+import { 	Text 				, 
 			TouchableOpacity 	,
 			View				} 	from 'react-native';
 import 		Integer 				from '../utilities/integer';
+import 		Logo 					from '../utilities/logo';
 import 		list 					from '../../styles/list';
 import 		style 					from '../../styles/algorithms';
 import 		numbers 				from '../../utilities/numbers';
@@ -49,7 +49,11 @@ export default class Item extends React.PureComponent {
 						...items.cell ,
 						...appearance.head 
 					}}>
-						
+						<Logo 
+							id 		= { item.id 		}
+							style 	= { appearance.icon }
+							symbol 	= { item.symbol 	}
+						/>
 						<Text 
 							ellipsizeMode 	= 'tail'
 							numberOfLines 	= { 1 }

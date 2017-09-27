@@ -23,11 +23,11 @@
 			"assetExts" : ["ttf"]
 		},
 		"android": {
-			"package": "com.webstew.bullet" ,
+			"package": "com.webstew.cryptocoinminer" ,
 			"versionCode": 1
 		} ,
 		"ios" : {
-			"bundleIdentifier": "com.webstew.bullet" ,
+			"bundleIdentifier": "com.webstew.cryptocoinminer" ,
 			"supportsTablet" : true
 		}
 	}

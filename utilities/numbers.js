@@ -64,6 +64,13 @@ export default {
 		parts [ 0 ] = parts [ 0 ].replace ( /\B(?=(\d{3})+(?!\d))/g , ',' );
 
 		return parts.join ( '.' );
-	}
+	} ,
 
+	pad ( number , width , prefix ) {
+
+		prefix = prefix || '0';
+		number = number + '';
+
+		return number.length >= width ? number : new Array ( width - number.length + 1 ).join ( prefix ) + number;
+	}
 };
