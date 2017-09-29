@@ -29,6 +29,18 @@
 		"ios" : {
 			"bundleIdentifier": "com.webstew.cryptocoinminer" ,
 			"supportsTablet" : true
+		} ,
+		"hooks": {
+			"postPublish": [
+				{
+					"file": "sentry-expo/upload-sourcemaps",
+					"config": {
+						"organization": "stuart-pretorius",
+						"project": "crypto-coin-miner",
+						"authToken": "ed48dbbf8e374dcdaa813a6850dbf06e5f56835566114b728c4215ecbe7aad03"
+					}
+				}
+			]
 		}
 	}
 }

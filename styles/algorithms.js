@@ -21,9 +21,9 @@ export default ( theme ) => {
 		} ,
 
 		head 	: {
-			flex 			: 2 	,
-			flexDirection 	: 'row' ,
-			alignItems 		: 'center'
+			alignItems 		: 'center' 	,
+			flex 			: 2 		,
+			flexDirection 	: 'row'
 		} ,
 
 		icon 	: {

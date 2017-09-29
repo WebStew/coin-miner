@@ -1,7 +1,8 @@
 
 import 		React 					from 'react';
 import { 	connect 			} 	from 'react-redux';
-import { 	Platform 			,
+import { 	Linking 			,
+			Platform 			,
 			ScrollView 			,
 			Share 				,
 			Text 				,
@@ -33,15 +34,14 @@ export default connect (
 				icon 	= 'ios-share-outline'
 				press 	= {() => {
 
-					const 	platform 	= Platform.OS ,
-							link 		= platform === 'ios' ? application.stores.apple : application.stores.google;
+					const platform = Platform.OS;
 
 					analytics.event ( 'cryptobullography' , 'share' , 'open' , platform );
 					Share.share 	(
 						{
 							message 	: language.screens.share.summary 	,
 							title 		: language.screens.share.title 		,
-							url 		: link
+							url 		: application.store ()
 						} , 
 						{
 							dialogTitle : language.screens.share.title 		,
@@ -98,10 +98,10 @@ export default connect (
 				url 	: 'language'
 			} ,
 			
-			// {
-			// 	name 	: language.screens.donate.title  		,
-			// 	url 	: 'donate'
-			// }
+			{
+				name 	: language.screens.donate.title  		,
+				url 	: 'donate'
+			}
 		];
 	}
 
@@ -113,7 +113,7 @@ export default connect (
 
 		return this.settings ().map (( setting , index ) => {
 
-			const background = index % 2 === 0 ? theme.primary : theme.base;
+			const background = index % 2 === 0 ? theme.base : theme.primary;
 
 			return (
 				<TouchableOpacity 
@@ -142,11 +142,30 @@ export default connect (
 
 	render () {
 
-		const 	theme 	= this.props.theme 	,
-				scenery = scene ( theme ) 	;
+		const 	theme 		= this.props.theme 	,
+				scenery 	= scene ( theme ) 	,
+				appearance 	= style ( theme ) 	;
 
 		return 	(
 			<ScrollView style = { scenery.body }>
+				<TouchableOpacity 
+					onPress = {() => Linking.openURL ( application.cryptobullography ())}
+					style 	= {{ 
+						...appearance.control ,
+						...{
+							backgroundColor : theme.primary
+						}
+					}}
+				>
+					<Text style = { appearance.text 			}>
+						Cryptobullography
+					</Text>
+					<Ionicons
+						name 	= { 'ios-arrow-forward-outline' }
+						size 	= { 18 							}
+						color 	= { theme.secondary 			}
+					/>
+				</TouchableOpacity>
 				{ this.contents ()}
 			</ScrollView>
 		);

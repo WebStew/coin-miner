@@ -6,12 +6,16 @@ import 	{ 	View 			,
 import 	{ 	connect 		} 	from 'react-redux';
 import 		Back 				from '../components/utilities/back';
 import 		Heading 			from '../components/utilities/headings';
+import 		Logo 				from '../components/utilities/logo';
 import 		Sections 			from '../components/utilities/sections';
+import 		Advert 				from '../components/adverts/button';
+import 		ads 				from '../styles/adverts';
 import 		layout 				from '../styles/layout';
 import 		scene 				from '../styles/scene';
 import 		style 				from '../styles/detail';
 import 		numbers 			from '../utilities/numbers';
 import 		analytics 			from '../utilities/analytics';
+import 		adverts 			from '../configuration/adverts';
 
 export default connect (
 
@@ -44,6 +48,7 @@ export default connect (
 		const 	item 		= this.props.navigation.state.params.item ,
 				language 	= this.props.language 	,
 				theme 		= this.props.theme 		,
+				ad 			= ads 		( theme ) 	,
 				appearance 	= style 	( theme ) 	,
 				arrange 	= layout 	( theme ) 	,
 				scenery 	= scene 	( theme ) 	; 		
@@ -58,6 +63,11 @@ export default connect (
 							...scenery.header
 						}}
 					>
+						<Logo 
+							id 		= { item.id 		}
+							style 	= { appearance.icon }
+							symbol 	= { item.symbol 	}
+						/>
 						<Heading 
 							title 	= { item.currency + ' ( ' +  item.symbol + ' )' } 
 							theme 	= { theme 										}
@@ -138,6 +148,18 @@ export default connect (
 							}
 						]}
 					/>
+					<View 	style 		= { ad.body 			}>
+						<Advert 
+							id 			= { adverts.detail [ 0 ]}
+							language 	= { language 			}
+							theme 		= { theme 				} 
+						/>
+						<Advert 
+							id 			= { adverts.detail [ 1 ]}
+							language 	= { language 			}
+							theme 		= { theme 				} 
+						/>
+					</View>
 				</View>
 			</ScrollView>
 		);

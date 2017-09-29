@@ -6,7 +6,7 @@ export default ( theme ) => {
 
 		body : {
 			backgroundColor 	: theme.primary ,
-			borderTopWidth 		: 1 			,
+			borderBottomWidth 	: 1 			,
 			borderColor 		: theme.border 	,
 			paddingBottom 		: 5 			,
 			paddingHorizontal 	: 15 			,
