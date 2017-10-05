@@ -1,6 +1,4 @@
 
-//import theme from '../configuration/palette';
-
 export default ( theme ) => {
 
 	return {
