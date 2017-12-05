@@ -247,7 +247,7 @@ export default connect (
 			return (
 				<View  style 	= { scenery.body 					}>
 					<Loader 
-					loading = { this.props.algorithms.loading 	}
+						loading = { this.props.algorithms.loading 	}
 						size 	= 'large' 
 						theme 	= { theme 							}
 					/>
